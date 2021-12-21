@@ -13,7 +13,7 @@ namespace OnlineTicariOtomasyon.Controllers
         private Context context = new Context();
         public ActionResult Index()
         {
-            var degerler = context.Departmans.ToList();
+            var degerler = context.Departmans.Where(x => x.Durum == true).ToList();
             return View(degerler);
         }
 
