@@ -16,5 +16,19 @@ namespace OnlineTicariOtomasyon.Controllers
             var urunler = context.Uruns.ToList();
             return View(urunler);
         }
+
+        [HttpGet]
+        public ActionResult YeniUrun()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniUrun(Urun urun)
+        {
+            context.Uruns.Add(urun);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
