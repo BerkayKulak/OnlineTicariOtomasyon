@@ -16,5 +16,21 @@ namespace OnlineTicariOtomasyon.Controllers
             var degerler = context.Departmans.ToList();
             return View(degerler);
         }
+
+        [HttpGet]
+        public ActionResult DepartmanEkle()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DepartmanEkle(Departman departman)
+        {
+            context.Departmans.Add(departman);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
