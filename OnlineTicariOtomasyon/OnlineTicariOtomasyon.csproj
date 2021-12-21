@@ -132,6 +132,7 @@
     <Compile Include="Models\Sınıflar\Giderler.cs" />
     <Compile Include="Models\Sınıflar\Kategori.cs" />
     <Compile Include="Models\Sınıflar\Personel.cs" />
+    <Compile Include="Models\Sınıflar\SatisHareket.cs" />
     <Compile Include="Models\Sınıflar\Urun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
