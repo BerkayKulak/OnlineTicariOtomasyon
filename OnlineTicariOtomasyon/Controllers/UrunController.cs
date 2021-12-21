@@ -30,5 +30,13 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult UrunSil(int id)
+        {
+            var deger = context.Uruns.Find(id);
+            deger.Durum = false;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
