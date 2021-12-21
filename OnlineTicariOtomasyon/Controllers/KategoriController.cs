@@ -47,5 +47,13 @@ namespace OnlineTicariOtomasyon.Controllers
             var kategori = context.Kategoris.Find(id);
             return View("KategoriGetir", kategori);
         }
+
+        public ActionResult KategoriGuncelle(Kategori kategori)
+        {
+            var ktgr = context.Kategoris.Find(kategori.KategoriID);
+            ktgr.KategoriAd = kategori.KategoriAd;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
