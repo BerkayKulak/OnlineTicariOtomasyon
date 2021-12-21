@@ -13,13 +13,22 @@ namespace OnlineTicariOtomasyon.Controllers
         private Context context = new Context();
         public ActionResult Index()
         {
-            var urunler = context.Uruns.ToList();
+            var urunler = context.Uruns.Where(x => x.Durum == true).ToList();
             return View(urunler);
         }
 
         [HttpGet]
         public ActionResult YeniUrun()
         {
+            // dropdown yaratıyoruz. texti adı olacak, valuesi ise idsi olacak
+            List<SelectListItem> deger1 = (from x in context.Kategoris.ToList()
+                select new SelectListItem
+                {
+                    Text = x.KategoriAd,
+                    Value = x.KategoriID.ToString()
+                }).ToList();
+
+            ViewBag.dgr1 = deger1;
             return View();
         }
 
