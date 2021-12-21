@@ -32,5 +32,14 @@ namespace OnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult DepartmanSil(int id)
+        {
+            var departman = context.Departmans.Find(id);
+            departman.Durum = false;
+
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
