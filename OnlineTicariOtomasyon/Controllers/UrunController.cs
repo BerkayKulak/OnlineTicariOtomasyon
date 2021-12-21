@@ -61,5 +61,20 @@ namespace OnlineTicariOtomasyon.Controllers
             var urundeger = context.Uruns.Find(id);
             return View("UrunGetir", urundeger);
         }
+
+        public ActionResult UrunGuncelle(Urun urun)
+        {
+            var urn = context.Uruns.Find(urun.UrunId);
+            urn.AlisFiyat = urun.AlisFiyat;
+            urn.Durum = urun.Durum;
+            urn.KategoriID = urun.KategoriID;
+            urn.Marka = urun.Marka;
+            urn.SatisFiyat = urun.SatisFiyat;
+            urn.Stok = urun.Stok;
+            urn.UrunAd = urun.UrunAd;
+            urn.UrunGorsel = urun.UrunGorsel;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
