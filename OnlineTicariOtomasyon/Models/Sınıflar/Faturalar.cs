@@ -15,5 +15,6 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         public DateTime Saat { get; set; }
         public string TeslimEden { get; set; }
         public string TeslimAlan { get; set; }
+        public ICollection<FaturaKalem> FaturaKalems { get; set; }
     }
 }
