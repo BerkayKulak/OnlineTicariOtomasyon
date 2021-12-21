@@ -1,4 +1,4 @@
-﻿
+﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.Personel>
 @{
     ViewBag.Title = "DepartmanDetay";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -8,9 +8,9 @@
 <h2>Departman Detay Sayfası</h2>
 <br/>
 
-<div style="background-color: darkgray">
-    Deneme
-</div>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Departman Detay</li>
+</ol>
 <br/>
 <table class="table table-hover">
     <tr>
@@ -20,11 +20,16 @@
         <th>Görsel</th>
         <th>Satışlar</th>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a href="#" class="btn btn-info" style="background-color: green">Satışlar</a></td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelId</td>
+            <td>@item.PersonelAd</td>
+            <td>@item.PersonelSoyad</td>
+            <td>@item.PersonelGorsel</td>
+            <td><a href="#" class="btn btn-info" style="background-color: green">Satışlar</a></td>
+        </tr>
+    }
+  
 </table>
+
