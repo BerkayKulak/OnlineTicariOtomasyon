@@ -36,7 +36,20 @@ namespace OnlineTicariOtomasyon.Controllers
         {
             var departman = context.Departmans.Find(id);
             departman.Durum = false;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
+        public ActionResult DepartmanGetir(int id)
+        {
+            var departman = context.Departmans.Find(id);
+            return View("DepartmanGetir", departman);
+        }
+
+        public ActionResult DepartmanGuncelle(Departman departman)
+        {
+            var dept = context.Departmans.Find(departman.DepartmanId);
+            dept.DepartmanAd = departman.DepartmanAd;
             context.SaveChanges();
             return RedirectToAction("Index");
         }
