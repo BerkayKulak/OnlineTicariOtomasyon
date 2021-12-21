@@ -17,5 +17,6 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         public decimal SatisFiyat { get; set; }
         public bool Durum { get; set; }
         public string UrunGorsel { get; set; }
+        public Kategori Kategori { get; set; }
     }
 }
