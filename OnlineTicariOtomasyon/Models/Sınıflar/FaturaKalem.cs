@@ -14,6 +14,7 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         public int Miktar { get; set; }
         public decimal BirimFiyat { get; set; }
         public decimal Tutar { get; set; }
+        public Faturalar Faturalar { get; set; }
 
     }
 }
