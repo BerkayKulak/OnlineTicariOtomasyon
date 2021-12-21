@@ -65,7 +65,10 @@ namespace OnlineTicariOtomasyon.Controllers
 
         public ActionResult DepartmanPersonelSatis(int id)
         {
-            return View();
+            var degerler = context.SatisHarekets.Where(x => x.PersonelId == id).ToList();
+            var personel = context.Personels.Where(x => x.PersonelId == id).Select(y => y.PersonelAd).FirstOrDefault();
+            ViewBag.p = personel;
+            return View(degerler);
         }
     }
 }
