@@ -11,5 +11,6 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         [Key]
         public int DepartmanId { get; set; }
         public string DepartmanAd { get; set; }
+        public ICollection<Personel> Personels { get; set; }
     }
 }
