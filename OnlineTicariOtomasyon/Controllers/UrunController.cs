@@ -130,5 +130,13 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult UrunListesi()
+        {
+            var degerler = context.Uruns.ToList();
+            return View(degerler);
+        }
+
+
     }
 }
