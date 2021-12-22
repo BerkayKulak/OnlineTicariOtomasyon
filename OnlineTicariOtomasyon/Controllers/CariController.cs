@@ -13,7 +13,7 @@ namespace OnlineTicariOtomasyon.Controllers
         private Context context = new Context();
         public ActionResult Index()
         {
-            var degerler = context.Carilers.ToList();
+            var degerler = context.Carilers.Where(x=>x.Durum==true).ToList();
             return View(degerler);
         }
 
@@ -26,7 +26,16 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniCari(Cariler cariler)
         {
+            cariler.Durum = true;
             context.Carilers.Add(cariler);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult CariSil(int id)
+        {
+            var cariler = context.Carilers.Find(id);
+            cariler.Durum = false;
             context.SaveChanges();
             return RedirectToAction("Index");
         }
