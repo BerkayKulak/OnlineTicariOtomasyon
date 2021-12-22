@@ -63,6 +63,11 @@ namespace OnlineTicariOtomasyon.Controllers
                 .FirstOrDefault();
             ViewBag.d12 = deger12;
 
+            // En Çok Satan Ürün
+            var deger13 =c.Uruns.Where(u=>u.UrunId==(c.SatisHarekets.GroupBy(x => x.UrunId).OrderByDescending(z => z.Count()).Select(y => y.Key)
+                .FirstOrDefault())).Select(k=>k.UrunAd).FirstOrDefault();
+            ViewBag.d13 = deger13;
+
             // Kasadaki Tutar
             var deger14 = c.SatisHarekets.Sum(x => x.ToplamTutar).ToString();
             ViewBag.d14 = deger14;
@@ -83,6 +88,7 @@ namespace OnlineTicariOtomasyon.Controllers
             {
                 ViewBag.d16 = deger15;
             }
+
 
 
 
