@@ -13,13 +13,19 @@ namespace OnlineTicariOtomasyon.Controllers
         private Context c = new Context();
         public ActionResult Index()
         {
-            // Carileri say
+            // Carileri Say
             var deger1 = c.Carilers.Count().ToString();
             ViewBag.d1 = deger1;
+
+            // Urunleri Say
             var deger2 = c.Uruns.Count().ToString();
             ViewBag.d2 = deger2;
+
+            // Personelleri Say
             var deger3 = c.Personels.Count().ToString();
             ViewBag.d3 = deger3;
+
+            // Kategorileri Say
             var deger4 = c.Kategoris.Count().ToString();
             ViewBag.d4 = deger4;
 
@@ -50,6 +56,16 @@ namespace OnlineTicariOtomasyon.Controllers
             // Laptop sayısı
             var deger11 = c.Uruns.Count(x => x.UrunAd == "Laptop").ToString();
             ViewBag.d11 = deger11;
+
+            // Kasadaki Tutar
+            var deger14 = c.SatisHarekets.Sum(x => x.ToplamTutar).ToString();
+            ViewBag.d14 = deger14;
+
+            // Bugünkü Satışlar
+            var deger15 = c.SatisHarekets.Count(x => x.Tarih == DateTime.Today).ToString();
+            ViewBag.d15 = deger15;
+
+           
 
 
             return View();
