@@ -16,6 +16,20 @@ namespace OnlineTicariOtomasyon.Controllers
             var degerler = context.Carilers.ToList();
             return View(degerler);
         }
-        
+
+        [HttpGet]
+        public ActionResult YeniCari()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniCari(Cariler cariler)
+        {
+            context.Carilers.Add(cariler);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
