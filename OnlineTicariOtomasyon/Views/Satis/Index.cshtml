@@ -1,4 +1,4 @@
-﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.SatisHareket>
+﻿@model System.Data.DataTable
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -19,19 +19,20 @@
         <th>Detaylar</th>
     </tr>
 
-    @foreach (var item in Model)
+    @for(int i=0;i<Model.Rows.Count;i++)
     {
         <tr>
-            <td>@item.SatisId</td>
-            <td>@item.Urun.UrunAd</td>
-            <td>@item.Cariler.CariAd @item.Cariler.CariSoyad</td>
-            <td>@item.Personel.PersonelAd @item.Personel.PersonelSoyad</td>
-            <td>@item.Adet</td>
-            <td>@item.Fiyat</td>
-            <td>@item.ToplamTutar</td>
-            <td>@item.Tarih</td>
-            <td><a class="btn btn-success" href="/Personel/PersonelGetir/@item.PersonelId">Güncelle</a></td>
-            <td><a class="btn btn-info" href="/Departman/DepartmanPersonelSatis/@item.PersonelId">Satışlar</a></td>
+            <td>@Model.Rows[i][0]</td>
+            <td>@Model.Rows[i][1]</td>
+            <td>@Model.Rows[i][2]</td>
+            <td>@Model.Rows[i][3]</td>
+            <td>@Model.Rows[i][4]</td>
+            <td>@Model.Rows[i][5]</td>
+            <td>@Model.Rows[i][6]</td>
+            <td>@Model.Rows[i][7]</td>
+            <td><a class="btn btn-success" href="/Personel/PersonelGetir/@Model.Rows[i][8]">Güncelle</a></td>
+            <td><a class="btn btn-info" href="/Departman/DepartmanPersonelSatis/@Model.Rows[i][8]">Satışlar</a></td>
+           
         </tr>
     }
 

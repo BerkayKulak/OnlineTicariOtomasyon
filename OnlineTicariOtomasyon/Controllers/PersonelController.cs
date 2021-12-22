@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,10 +13,23 @@ namespace OnlineTicariOtomasyon.Controllers
     {
         // GET: Personel
         private Context context = new Context();
+        private string connection =
+            "data source=(localdb)\\MSSQLLocalDB;initial catalog=KfauAutomationProject;integrated security=True";
         public ActionResult Index()
         {
-            var degerler = context.Personels.ToList();
-            return View(degerler);
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData =
+                    new SqlDataAdapter("select PersonelAd,PersonelSoyad,PersonelGorsel,DepartmanAd,P.PersonelId" +
+                                       "\r\nfrom Personels as P" +
+                                       "\r\ninner join Departmen as D" +
+                                       "\r\non D.DepartmanId=P.DepartmanId", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
+            // var degerler = context.SatisHarekets.ToList();
+            return View(dtbDataTable);
         }
 
         [HttpGet]
@@ -34,7 +49,16 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel personel)
         {
-            context.Personels.Add(personel);
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData =
+                    new SqlDataAdapter($"INSERT INTO Personels " +
+                                       $"(PersonelAd,PersonelSoyad,PersonelGorsel,DepartmanId)" +
+                                       $"\r\nVALUES ('{personel.PersonelAd}','{personel.PersonelSoyad}','{personel.PersonelGorsel}','{personel.DepartmanId}');", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
             context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -55,11 +79,24 @@ namespace OnlineTicariOtomasyon.Controllers
 
         public ActionResult PersonelGuncelle(Personel personel)
         {
-            var prs = context.Personels.Find(personel.PersonelId);
-            prs.PersonelAd = personel.PersonelAd;
-            prs.PersonelSoyad = personel.PersonelSoyad;
-            prs.PersonelGorsel = personel.PersonelGorsel;
-            prs.DepartmanId = personel.DepartmanId;
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData =
+                    new SqlDataAdapter($"UPDATE Personels" +
+                                       $"\r\nSET PersonelAd = '{personel.PersonelAd}', " +
+                                       $"\r\nPersonelSoyad= '{personel.PersonelSoyad}'," +
+                                       $"\r\nPersonelGorsel = '{personel.PersonelGorsel}'," +
+                                       $"\r\nDepartmanId = {personel.DepartmanId}" +
+                                       $"\r\nWHERE PersonelId = {personel.PersonelId};", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
+            //var prs = context.Personels.Find(personel.PersonelId);
+            //prs.PersonelAd = personel.PersonelAd;
+            //prs.PersonelSoyad = personel.PersonelSoyad;
+            //prs.PersonelGorsel = personel.PersonelGorsel;
+            //prs.DepartmanId = personel.DepartmanId;
             context.SaveChanges();
             return RedirectToAction("Index");
         }
