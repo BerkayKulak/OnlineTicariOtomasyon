@@ -56,7 +56,8 @@ namespace OnlineTicariOtomasyon.Controllers
                 SqlDataAdapter sqlData =
                     new SqlDataAdapter($"INSERT INTO Personels " +
                                        $"(PersonelAd,PersonelSoyad,PersonelGorsel,DepartmanId)" +
-                                       $"\r\nVALUES ('{personel.PersonelAd}','{personel.PersonelSoyad}','{personel.PersonelGorsel}','{personel.DepartmanId}');", sqlConnection);
+                                       $"\r\nVALUES ('{personel.PersonelAd}','{personel.PersonelSoyad}'," +
+                                       $"'{personel.PersonelGorsel}','{personel.DepartmanId}');", sqlConnection);
                 sqlData.Fill(dtbDataTable);
             }
             context.SaveChanges();

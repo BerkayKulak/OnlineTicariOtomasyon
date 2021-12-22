@@ -57,7 +57,8 @@ namespace OnlineTicariOtomasyon.Controllers
             {
                 sqlConnection.Open();
                 SqlDataAdapter sqlData =
-                    new SqlDataAdapter($"INSERT INTO Uruns(UrunAd,Marka,Stok,AlisFiyat,SatisFiyat,KategoriID,UrunGorsel,Durum)" +
+                    new SqlDataAdapter($"INSERT INTO " +
+                                       $"Uruns(UrunAd,Marka,Stok,AlisFiyat,SatisFiyat,KategoriID,UrunGorsel,Durum)" +
                                        $"\r\nVALUES ('{urun.UrunAd}', '{urun.Marka}','{urun.Stok}', " +
                                        $"'{urun.AlisFiyat}', '{urun.SatisFiyat}', " +
                                        $"'{urun.KategoriID}', '{urun.UrunGorsel}','{urun.Durum}');", sqlConnection);
