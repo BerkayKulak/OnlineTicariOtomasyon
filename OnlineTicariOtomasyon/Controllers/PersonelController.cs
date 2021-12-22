@@ -38,6 +38,31 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult PersonelGetir(int id)
+        {
+            List<SelectListItem> deger1 = (from x in context.Departmans.ToList()
+                select new SelectListItem
+                {
+                    Text = x.DepartmanAd,
+                    Value = x.DepartmanId.ToString()
+                }).ToList();
+
+            ViewBag.dgr1 = deger1;
+            var personel = context.Personels.Find(id);
+            return View("PersonelGetir", personel);
+        }
+
+        public ActionResult PersonelGuncelle(Personel personel)
+        {
+            var prs = context.Personels.Find(personel.PersonelId);
+            prs.PersonelAd = personel.PersonelAd;
+            prs.PersonelSoyad = personel.PersonelSoyad;
+            prs.PersonelGorsel = personel.PersonelGorsel;
+            prs.DepartmanId = personel.DepartmanId;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 
 }
