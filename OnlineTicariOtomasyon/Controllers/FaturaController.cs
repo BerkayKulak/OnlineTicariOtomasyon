@@ -50,5 +50,11 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult FaturaDetay(int id)
+        {
+            var degerler = context.FaturaKalems.Where(x => x.FaturaId == id).ToList();
+            return View(degerler);
+        }
     }
 }
