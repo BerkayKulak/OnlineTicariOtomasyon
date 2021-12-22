@@ -1,4 +1,4 @@
-﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.Kategori>
+﻿@model System.Data.DataTable
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -13,13 +13,13 @@
         <th>Güncelle</th>
     </tr>
 
-    @foreach (var item in Model)
+    @for (int i = 0; i < Model.Rows.Count; i++)
     {
         <tr>
-            <td>@item.KategoriID</td>
-            <td>@item.KategoriAd</td>
-            <td><a class="btn btn-danger" href="/Kategori/KategoriSil/@item.KategoriID">Sil</a></td>
-            <td><a class="btn btn-success" href="/Kategori/KategoriGetir/@item.KategoriID">Güncelle</a></td>
+            <td>@Model.Rows[i][0]</td>
+            <td>@Model.Rows[i][1]</td>
+            <td><a class="btn btn-danger" href="/Kategori/KategoriSil/@Model.Rows[i][0]">Sil</a></td>
+            <td><a class="btn btn-success" href="/Kategori/KategoriGetir/@Model.Rows[i][0]">Güncelle</a></td>
         </tr>
     }
 

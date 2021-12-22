@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,11 +13,31 @@ namespace OnlineTicariOtomasyon.Controllers
     {
         // GET: Satis
         private Context context = new Context();
+
+        private string connection =
+            "data source=(localdb)\\MSSQLLocalDB;initial catalog=KfauAutomationProject;integrated security=True";
+
+ 
         public ActionResult Index()
         {
-            var degerler = context.SatisHarekets.ToList();
-            return View(degerler);
-        }
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData = 
+                    new SqlDataAdapter("SELECT SatisId,UrunAd,CariAd,PersonelAd,Adet,Fiyat,ToplamTutar,Tarih,SH.PersonelId" +
+                                       "\r\nFROM SatisHarekets as SH" +
+                                       "\r\nINNER JOIN Uruns AS U" +
+                                       "\r\nON U.UrunId = SH.UrunId  " +
+                                       "\r\nINNER JOIN Personels AS p" +
+                                       "\r\nON P.PersonelId = SH.PersonelId" +
+                                       "\r\nINNER JOIN Carilers AS C" +
+                                       "\r\nON C.CariId = SH.CariId \r\n", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
+            // var degerler = context.SatisHarekets.ToList();
+            return View(dtbDataTable);
+        } 
 
         [HttpGet]
         public ActionResult YeniSatis()
@@ -51,10 +73,27 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniSatis(SatisHareket satisHareket)
         {
-            satisHareket.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString()) ;
-            context.SatisHarekets.Add(satisHareket);
+            //satisHareket.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+            //context.SatisHarekets.Add(satisHareket);
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData =
+                    new SqlDataAdapter($"insert into SatisHarekets " +
+                                       $"(UrunId,CariId,PersonelId,Adet,Fiyat,ToplamTutar,Tarih)" +
+                                       $"\r\nvalues ('{satisHareket.UrunId}','{satisHareket.CariId}'," +
+                                       $"'{satisHareket.PersonelId}','{satisHareket.Adet}'," +
+                                       $"'{satisHareket.Fiyat}','{satisHareket.ToplamTutar}',GETDATE()); ", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
+       
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+      
+
     }
 }

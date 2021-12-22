@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,10 +15,20 @@ namespace OnlineTicariOtomasyon.Controllers
     {
         // GET: Kategori
         private Context context = new Context();
+        private string connection =
+            "data source=(localdb)\\MSSQLLocalDB;initial catalog=KfauAutomationProject;integrated security=True";
         public ActionResult Index()
         {
-            var degerler = context.Kategoris.ToList();
-            return View(degerler);
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData =
+                    new SqlDataAdapter("select * from Kategoris", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
+            // var degerler = context.SatisHarekets.ToList();
+            return View(dtbDataTable);
         }
 
         [HttpGet]
@@ -29,15 +41,28 @@ namespace OnlineTicariOtomasyon.Controllers
         // butonu tıklayınca burayı çalıştır.
         public ActionResult KategoriEkle(Kategori kategori)
         {
-            context.Kategoris.Add(kategori);
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData =
+                    new SqlDataAdapter($"INSERT INTO Kategoris(KategoriAd)\r\nVALUES ('{kategori.KategoriAd}');", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
             context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public ActionResult KategoriSil(int id)
         {
-            var kategori = context.Kategoris.Find(id);
-            context.Kategoris.Remove(kategori);
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData =
+                    new SqlDataAdapter($"DELETE FROM Kategoris WHERE KategoriID={id};", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
             context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -50,8 +75,16 @@ namespace OnlineTicariOtomasyon.Controllers
 
         public ActionResult KategoriGuncelle(Kategori kategori)
         {
-            var ktgr = context.Kategoris.Find(kategori.KategoriID);
-            ktgr.KategoriAd = kategori.KategoriAd;
+            DataTable dtbDataTable = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+                SqlDataAdapter sqlData =
+                    new SqlDataAdapter($"UPDATE Kategoris" +
+                                       $"\r\nSET KategoriAd = '{kategori.KategoriAd}'" +
+                                       $"\r\nWHERE KategoriID = {kategori.KategoriID};", sqlConnection);
+                sqlData.Fill(dtbDataTable);
+            }
             context.SaveChanges();
             return RedirectToAction("Index");
         }
