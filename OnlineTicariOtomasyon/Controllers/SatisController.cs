@@ -137,5 +137,11 @@ namespace OnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult SatisDetay(int id)
+        {
+            var degerler = context.SatisHarekets.Where(x => x.SatisId == id).ToList();
+            return View(degerler);
+        }
+
     }
 }

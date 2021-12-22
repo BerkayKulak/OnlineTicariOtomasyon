@@ -4,22 +4,25 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
+<br/>
+<table id="tbl1" class="table table-bordered" style="margin-top: 20px">
+    <thead>
 
-<table class="table table-bordered" style="margin-top: 20px">
-    <tr>
-        <th>Id</th>
-        <th>Ürün</th>
-        <th>Cari</th>
-        <th>Personel</th>
-        <th>Adet</th>
-        <th>Fiyat</th>
-        <th>Toplam</th>
-        <th>Tarih</th>
-        <th>Güncelle</th>
-        <th>Detaylar</th>
-    </tr>
 
-    @for(int i=0;i<Model.Rows.Count;i++)
+        <tr>
+            <th>Id</th>
+            <th>Ürün</th>
+            <th>Cari</th>
+            <th>Personel</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    @for (int i = 0; i < Model.Rows.Count; i++)
     {
         <tr>
             <td>@Model.Rows[i][0]</td>
@@ -31,10 +34,26 @@
             <td>@Model.Rows[i][6]</td>
             <td>@Model.Rows[i][7]</td>
             <td><a class="btn btn-success" href="/Satis/SatisGetir/@Model.Rows[i][0]">Güncelle</a></td>
-            <td><a class="btn btn-info" href="/Departman/DepartmanPersonelSatis/@Model.Rows[i][8]">Satışlar</a></td>
-           
+            <td><a class="btn btn-info" href="/Satis/SatisDetay/@Model.Rows[i][0]">Satışlar</a></td>
+
         </tr>
     }
 
 </table>
 <a href="/Satis/YeniSatis" class="btn btn-primary">Yeni Satış Yap</a>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
