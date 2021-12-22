@@ -12,9 +12,9 @@
         <th>Vergi Dairesi</th>
         <th>Tarih</th>
         <th>Saat</th>
-        <th>Toplam</th>
         <th>Teslim Eden</th>
         <th>Teslim Alan</th>
+        <th>Toplam</th>
         <th>Güncelle</th>
         <th>Detaylar</th>
     </tr>
@@ -28,17 +28,16 @@
             <td>@item.VergiDairesi</td>
             <td>@item.Tarih</td>
             <td>@item.Saat</td>
-            <td>100</td>
             <td>@item.TeslimEden</td>
             <td>@item.TeslimAlan</td>
-
+            <td>@item.Toplam</td>
             <td><a class="btn btn-success" href="/Departman/DepartmanGetir/@item.FaturaId">Güncelle</a></td>
             <td><a class="btn btn-info" href="/Departman/DepartmanDetay/@item.FaturaId">Detaylar</a></td>
         </tr>
     }
 
 </table>
-<a href="/Departman/DepartmanEkle" class="btn btn-primary">Departman Ekle</a>
+<a href="/Fatura/FaturaEkle" class="btn btn-primary">Fatura Ekle</a>
 
 
 
