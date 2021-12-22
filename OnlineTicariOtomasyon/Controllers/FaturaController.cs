@@ -30,5 +30,25 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult FaturaGetir(int id)
+        {
+            var fatura = context.Faturalars.Find(id);
+            return View("FaturaGetir", fatura);
+        }
+
+        public ActionResult FaturaGuncelle(Faturalar faturalar)
+        {
+            var fatura = context.Faturalars.Find(faturalar.FaturaId);
+            fatura.FaturaSeriNo = faturalar.FaturaSeriNo;
+            fatura.FaturaSıraNo = faturalar.FaturaSıraNo;
+            fatura.VergiDairesi = faturalar.VergiDairesi;
+            fatura.Saat = faturalar.Saat;
+            fatura.Tarih = faturalar.Tarih;
+            fatura.TeslimAlan = faturalar.TeslimAlan;
+            fatura.TeslimEden = faturalar.TeslimEden;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
