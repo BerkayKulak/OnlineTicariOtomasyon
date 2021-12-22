@@ -123,7 +123,19 @@ namespace OnlineTicariOtomasyon.Controllers
             return View("SatisGetir", deger);
         }
 
-      
+        public ActionResult SatisGuncelle(SatisHareket satisHareket)
+        {
+            var deger = context.SatisHarekets.Find(satisHareket.SatisId);
+            deger.CariId = satisHareket.CariId;
+            deger.Adet = satisHareket.Adet;
+            deger.Fiyat = satisHareket.Fiyat;
+            deger.PersonelId = satisHareket.PersonelId;
+            deger.Tarih = satisHareket.Tarih;
+            deger.ToplamTutar = satisHareket.ToplamTutar;
+            deger.UrunId = satisHareket.UrunId;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
     }
 }
