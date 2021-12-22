@@ -10,11 +10,25 @@ namespace OnlineTicariOtomasyon.Controllers
     public class FaturaController : Controller
     {
         // GET: Fatura
-        private Context c = new Context();
+        private Context context = new Context();
         public ActionResult Index()
         {
-            var liste = c.Faturalars.ToList();
+            var liste = context.Faturalars.ToList();
             return View(liste);
+        }
+        
+        [HttpGet]
+        public ActionResult FaturaEkle()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult FaturaEkle(Faturalar faturalar)
+        {
+            context.Faturalars.Add(faturalar);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
