@@ -1,0 +1,45 @@
+﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.SatisHareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered" style="margin-top: 20px">
+    <tr>
+        <th>Id</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Adet</th>
+        <th>Fiyat</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SatisId</td>
+            <td>@item.Urun.UrunAd</td>
+            <td>@item.Cariler.CariAd @item.Cariler.CariSoyad</td>
+            <td>@item.Personel.PersonelAd @item.Personel.PersonelSoyad</td>
+            <td>@item.Adet</td>
+            <td>@item.Fiyat</td>
+            <td>@item.ToplamTutar</td>
+            <td>@item.Tarih</td>
+            <td><a class="btn btn-success" href="/Personel/PersonelGetir/@item.PersonelId">Güncelle</a></td>
+            <td><a class="btn btn-info" href="/Departman/DepartmanPersonelSatis/@item.PersonelId">Satışlar</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Satis/YeniSatis" class="btn btn-primary">Yeni Satış Yap</a>
+
+
+
+
+
+
