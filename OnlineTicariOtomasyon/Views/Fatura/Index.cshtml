@@ -1,0 +1,44 @@
+﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top: 20px">
+    <tr>
+        <th>Id</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Toplam</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FaturaId</td>
+            <td>@item.FaturaSeriNo</td>
+            <td>@item.FaturaSıraNo</td>
+            <td>@item.VergiDairesi</td>
+            <td>@item.Tarih</td>
+            <td>@item.Saat</td>
+            <td>100</td>
+            <td>@item.TeslimEden</td>
+            <td>@item.TeslimAlan</td>
+
+            <td><a class="btn btn-success" href="/Departman/DepartmanGetir/@item.FaturaId">Güncelle</a></td>
+            <td><a class="btn btn-info" href="/Departman/DepartmanDetay/@item.FaturaId">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Departman/DepartmanEkle" class="btn btn-primary">Departman Ekle</a>
+
+
+
