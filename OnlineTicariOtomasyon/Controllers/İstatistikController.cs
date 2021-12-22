@@ -57,6 +57,12 @@ namespace OnlineTicariOtomasyon.Controllers
             var deger11 = c.Uruns.Count(x => x.UrunAd == "Laptop").ToString();
             ViewBag.d11 = deger11;
 
+            // En Çok Olan Markanın Adı
+            var deger12 = c.Uruns.GroupBy(x => x.Marka).
+                OrderByDescending(z => z.Count()).Select(y => y.Key)
+                .FirstOrDefault();
+            ViewBag.d12 = deger12;
+
             // Kasadaki Tutar
             var deger14 = c.SatisHarekets.Sum(x => x.ToplamTutar).ToString();
             ViewBag.d14 = deger14;
@@ -65,7 +71,19 @@ namespace OnlineTicariOtomasyon.Controllers
             var deger15 = c.SatisHarekets.Count(x => x.Tarih == DateTime.Today).ToString();
             ViewBag.d15 = deger15;
 
-           
+            //Bugünkü Kasa Tutarı
+            if (Convert.ToInt32(deger15) != 0)
+            {
+
+                var deger16 = c.SatisHarekets.Where(x => x.Tarih == DateTime.Today).Sum(y => y.ToplamTutar).ToString();
+                ViewBag.d16 = deger16;
+
+            }
+            else
+            {
+                ViewBag.d16 = deger15;
+            }
+
 
 
             return View();
