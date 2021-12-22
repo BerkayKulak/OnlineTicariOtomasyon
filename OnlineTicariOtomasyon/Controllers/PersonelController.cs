@@ -16,5 +16,28 @@ namespace OnlineTicariOtomasyon.Controllers
             var degerler = context.Personels.ToList();
             return View(degerler);
         }
+
+        [HttpGet]
+        public ActionResult PersonelEkle()
+        { 
+            List<SelectListItem> deger1 = (from x in context.Departmans.ToList()
+                select new SelectListItem
+                {
+                    Text = x.DepartmanAd,
+                    Value = x.DepartmanId.ToString()
+                }).ToList();
+
+            ViewBag.dgr1 = deger1;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PersonelEkle(Personel personel)
+        {
+            context.Personels.Add(personel);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
+
 }
