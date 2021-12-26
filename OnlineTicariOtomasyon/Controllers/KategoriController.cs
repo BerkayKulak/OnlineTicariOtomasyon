@@ -24,7 +24,7 @@ namespace OnlineTicariOtomasyon.Controllers
             {
                 sqlConnection.Open();
                 SqlDataAdapter sqlData =
-                    new SqlDataAdapter("select * from Kategoris", sqlConnection);
+                    new SqlDataAdapter("exec SelectKategoris", sqlConnection);
                 sqlData.Fill(dtbDataTable);
             }
             // var degerler = context.SatisHarekets.ToList();
