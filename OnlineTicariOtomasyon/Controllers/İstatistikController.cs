@@ -89,9 +89,11 @@ namespace OnlineTicariOtomasyon.Controllers
                 ViewBag.d16 = deger15;
             }
 
+            return View();
+        }
 
-
-
+        public ActionResult KolayTablolar()
+        {
             return View();
         }
     }
