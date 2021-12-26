@@ -23,7 +23,10 @@ namespace OnlineTicariOtomasyon.Controllers
             using (SqlConnection sqlConnection = new SqlConnection(connection))
             {
                 sqlConnection.Open();
-                SqlDataAdapter sqlData =
+                // create Procedure SelectKategoris
+                // as
+                // select * from Kategoris
+               SqlDataAdapter sqlData =
                     new SqlDataAdapter("exec SelectKategoris", sqlConnection);
                 sqlData.Fill(dtbDataTable);
             }
