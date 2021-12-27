@@ -13,5 +13,11 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         {
             return View();
         }
+
+        public PartialViewResult Partial1()
+        {
+            return PartialView();
+        }
+
     }
 }
