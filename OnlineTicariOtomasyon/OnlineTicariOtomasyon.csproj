@@ -160,6 +160,7 @@
     <Compile Include="Models\Sınıflar\SinifGroup2.cs" />
     <Compile Include="Models\Sınıflar\SinifGroup3.cs" />
     <Compile Include="Models\Sınıflar\Urun.cs" />
+    <Compile Include="Models\Sınıflar\Yapilacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
