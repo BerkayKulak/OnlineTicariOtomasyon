@@ -17,10 +17,12 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(30)]
         public string PersonelAd { get; set; }
 
+        [Display(Name = "Personel Soyadı")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string PersonelSoyad { get; set; }
 
+        [Display(Name = "Personel Görseli")]
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string PersonelGorsel { get; set; }
