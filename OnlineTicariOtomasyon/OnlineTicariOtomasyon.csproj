@@ -155,7 +155,7 @@
     <Compile Include="Models\Sınıflar\Faturalar.cs" />
     <Compile Include="Models\Sınıflar\Giderler.cs" />
     <Compile Include="Models\Sınıflar\Kategori.cs" />
-    <Compile Include="Models\Sınıflar\LoginController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Models\Sınıflar\Personel.cs" />
     <Compile Include="Models\Sınıflar\SatisHareket.cs" />
     <Compile Include="Models\Sınıflar\SinifGroup.cs" />
@@ -2866,6 +2866,7 @@
     <Content Include="weblogin\fonts\fontawesome-webfont.woff" />
     <Content Include="weblogin\fonts\fontawesome-webfont.woff2" />
     <Content Include="weblogin\fonts\FontAwesome.otf" />
+    <Content Include="Views\Login\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
