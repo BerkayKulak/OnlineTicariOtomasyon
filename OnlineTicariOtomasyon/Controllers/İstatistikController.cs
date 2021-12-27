@@ -118,5 +118,17 @@ namespace OnlineTicariOtomasyon.Controllers
                 };
             return PartialView(sorgu2.ToList());
         }
+
+        public PartialViewResult Partial2()
+        {
+            var sorgu3 = c.Carilers.ToList();
+            return PartialView(sorgu3);
+        }
+
+        public PartialViewResult Partial3()
+        {
+            var sorgu4 = c.Uruns.ToList();
+            return PartialView(sorgu4);
+        }
     }
 }
