@@ -21,7 +21,10 @@ namespace OnlineTicariOtomasyon.Controllers
             ViewBag.d3 = deger3;
             var deger4 = (from x in context.Carilers select x.CariSehir).Distinct().Count().ToString();
             ViewBag.d4 = deger4;
-            return View();
+
+            var yapilacaklar = context.Yapilacaks.ToList();
+
+            return View(yapilacaklar);
         }
     }
 }
