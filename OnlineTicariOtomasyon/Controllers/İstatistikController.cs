@@ -130,5 +130,18 @@ namespace OnlineTicariOtomasyon.Controllers
             var sorgu4 = c.Uruns.ToList();
             return PartialView(sorgu4);
         }
+
+        public PartialViewResult Partial4()
+        {
+            var sorgu5 = from x in c.Uruns
+                group x by x.Marka
+                into g
+                select new SinifGroup3
+                {
+                    Marka = g.Key,
+                    Sayi = g.Count()
+                };
+            return PartialView(sorgu5.ToList());
+        }
     }
 }
