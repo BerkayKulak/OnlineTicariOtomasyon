@@ -19,7 +19,8 @@ namespace OnlineTicariOtomasyon.Controllers
             ViewBag.d2 = deger2;
             var deger3 = context.Kategoris.Count().ToString();
             ViewBag.d3 = deger3;
-            //var deger4 = context.Carilers.Distinct().Count(x=>x.CariSehir).ToString();
+            var deger4 = (from x in context.Carilers select x.CariSehir).Distinct().Count().ToString();
+            ViewBag.d4 = deger4;
             return View();
         }
     }
