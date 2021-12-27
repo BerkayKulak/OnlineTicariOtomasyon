@@ -19,7 +19,10 @@
         <tr>
             <td>@Model.Rows[i][0]</td>
             <td>@Model.Rows[i][1]</td>
-            <td>@Model.Rows[i][2]</td>
+            <td>
+                <img src="@Model.Rows[i][2]" style="width: 150px;height: 100px"/>
+            </td>
+            @*<td>@Model.Rows[i][2]</td>*@
             <td>@Model.Rows[i][3]</td>
             <td><a class="btn btn-success" href="/Personel/PersonelGetir/@Model.Rows[i][4]">Güncelle</a></td>
             <td><a class="btn btn-info" href="/Departman/DepartmanPersonelSatis/@Model.Rows[i][4]">Satışlar</a></td>
