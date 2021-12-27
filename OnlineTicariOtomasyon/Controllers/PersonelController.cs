@@ -104,8 +104,8 @@ namespace OnlineTicariOtomasyon.Controllers
 
         public ActionResult PersonelListe()
         {
-
-            return View();
+            var sorgu = context.Personels.ToList();
+            return View(sorgu);
 
         }
     }
