@@ -1,0 +1,16 @@
+﻿@model IEnumerable<OnlineTicariOtomasyon.Models.Sınıflar.SinifGroup2>
+<table>
+    <tr>
+        <td>Departman</td>
+        <td>Adet</td>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Departman</td>
+            <td>@x.Sayi</td>
+        </tr>
+    }
+</table>a
+<br/>
+<div style="background-color: red">Partial View</div>
