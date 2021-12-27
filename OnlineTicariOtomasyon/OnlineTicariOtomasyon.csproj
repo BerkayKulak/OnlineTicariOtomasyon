@@ -158,6 +158,7 @@
     <Compile Include="Models\Sınıflar\SatisHareket.cs" />
     <Compile Include="Models\Sınıflar\SinifGroup.cs" />
     <Compile Include="Models\Sınıflar\SinifGroup2.cs" />
+    <Compile Include="Models\Sınıflar\SinifGroup3.cs" />
     <Compile Include="Models\Sınıflar\Urun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2844,6 +2845,7 @@
     <Content Include="Views\İstatistik\Partial1.cshtml" />
     <Content Include="Views\İstatistik\Partial2.cshtml" />
     <Content Include="Views\İstatistik\Partial3.cshtml" />
+    <Content Include="Views\İstatistik\Partial4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
