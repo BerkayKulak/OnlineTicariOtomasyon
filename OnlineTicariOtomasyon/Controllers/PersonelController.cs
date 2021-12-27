@@ -101,6 +101,13 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult PersonelListe()
+        {
+
+            return View();
+
+        }
     }
 
 }
