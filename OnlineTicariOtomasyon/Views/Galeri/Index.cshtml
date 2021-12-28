@@ -1,7 +1,4 @@
-﻿
-@using PagedList
-@using PagedList.Mvc
-@model PagedList.IPagedList<OnlineTicariOtomasyon.Models.Sınıflar.Urun>
+﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.Urun>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -36,13 +33,13 @@
 </head>
 <body>
 
-    <br />
+    <br/>
     <div class="site-wrap">
 
         <main class="main-content">
-
-            <div class="container-fluid photos">
-                <div class="row align-items-stretch">
+           
+                <div class="container-fluid photos">
+                    <div class="row align-items-stretch">
                     @foreach (var item in Model)
                     {
                         <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
@@ -52,16 +49,16 @@
                                 <div class="photo-text-more">
                                     <span class="icon icon-search"></span>
                                 </div>
-
+                    
                             </a>
                         </div>
                     }
+                    </div>
+
+
                 </div>
-
-
-            </div>
-
-
+           
+          
         </main>
 
     </div> <!-- .site-wrap -->

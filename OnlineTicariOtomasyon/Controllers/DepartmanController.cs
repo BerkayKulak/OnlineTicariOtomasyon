@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OnlineTicariOtomasyon.Models.Sınıflar;
+using PagedList;
 
 namespace OnlineTicariOtomasyon.Controllers
 {
@@ -11,9 +12,9 @@ namespace OnlineTicariOtomasyon.Controllers
     {
         // GET: Departman
         private Context context = new Context();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var degerler = context.Departmans.Where(x => x.Durum == true).ToList();
+            var degerler = context.Departmans.Where(x => x.Durum == true).ToList().ToPagedList(sayfa, 4);
             return View(degerler);
         }
 
