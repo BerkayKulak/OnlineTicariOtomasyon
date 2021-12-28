@@ -16,5 +16,20 @@ namespace OnlineTicariOtomasyon.Controllers
             var kargolar = context.KargoDetays.ToList();
             return View(kargolar);
         }
+
+        [HttpGet]
+        public ActionResult YeniKargo()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniKargo(KargoDetay kargoDetay)
+        {
+            context.KargoDetays.Add(kargoDetay);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
