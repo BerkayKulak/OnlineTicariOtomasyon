@@ -20,7 +20,19 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult YeniKargo()
         {
-
+            Random random = new Random();
+            string[] karakterler = new[] {"A", "B", "C", "D"};
+            int karakter1, karakter2, karakter3;
+            karakter1 = random.Next(0, 4);
+            karakter2 = random.Next(0, 4);
+            karakter3 = random.Next(0, 4);
+            int s1, s2, s3;
+            s1 = random.Next(100, 1000);
+            s2 = random.Next(10, 99);
+            s3 = random.Next(10, 99);
+            string kod = s1.ToString() + karakterler[karakter1] + s2 + karakterler[karakter2] + s3 +
+                         karakterler[karakter3];
+            ViewBag.takipkod = kod;
             return View();
         }
 
