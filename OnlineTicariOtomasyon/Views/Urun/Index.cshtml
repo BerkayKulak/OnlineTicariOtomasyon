@@ -1,20 +1,23 @@
-﻿@model System.Data.DataTable
+﻿@using OnlineTicariOtomasyon.Models.Sınıflar
+@model System.Data.DataTable
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <br />
+
+<br/>
 <table class="table table-bordered">
     <tr>
-        <th>ID</th>
+        
         <th>Ürün</th>
         <th>Marka</th>
         <th>Stok</th>
         <th>Alış Fiyat</th>
         <th>Satış Fiyat</th>
         <th>Kategori</th>
-        <th>Görsel</th>
+
         <th>Sil</th>
         <th>Güncelle</th>
 
@@ -22,14 +25,14 @@
     @for(int i=0;i<Model.Rows.Count;i++)
     {
         <tr>
-            <td>@Model.Rows[i][0]</td>
+           
             <td>@Model.Rows[i][1]</td>
             <td>@Model.Rows[i][2]</td>
             <td>@Model.Rows[i][3]</td>
             <td>@Model.Rows[i][4]</td>
             <td>@Model.Rows[i][5]</td>
             <td>@Model.Rows[i][6]</td>
-            <td>@Model.Rows[i][7]</td>
+       
             <td><a href="/Urun/UrunSil/@Model.Rows[i][0]" class="btn btn-danger">Sil</a></td>
             <td><a href="/Urun/UrunGetir/@Model.Rows[i][0]" class="btn btn-success">Güncelle</a></td>
 
