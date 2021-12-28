@@ -51,7 +51,7 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
             }
             else
             {
-                return RedirectToAction("Index","Login")
+                return RedirectToAction("Index", "Login");
             }
             
         }
