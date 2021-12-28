@@ -142,6 +142,7 @@
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
@@ -152,9 +153,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112281845100_kargotest.cs" />
-    <Compile Include="Migrations\202112281845100_kargotest.designer.cs">
-      <DependentUpon>202112281845100_kargotest.cs</DependentUpon>
+    <Compile Include="Migrations\202112281921187_empty.cs" />
+    <Compile Include="Migrations\202112281921187_empty.designer.cs">
+      <DependentUpon>202112281921187_empty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112281925071_kargotest.cs" />
+    <Compile Include="Migrations\202112281925071_kargotest.designer.cs">
+      <DependentUpon>202112281925071_kargotest.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
@@ -2922,6 +2927,7 @@
     <Content Include="Views\CariPanel\Siparislerim.cshtml" />
     <Content Include="Views\Alertler\Index.cshtml" />
     <Content Include="Views\Urun\SatisYap.cshtml" />
+    <Content Include="Views\Kargo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2951,8 +2957,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112281845100_kargotest.resx">
-      <DependentUpon>202112281845100_kargotest.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112281921187_empty.resx">
+      <DependentUpon>202112281921187_empty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112281925071_kargotest.resx">
+      <DependentUpon>202112281925071_kargotest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

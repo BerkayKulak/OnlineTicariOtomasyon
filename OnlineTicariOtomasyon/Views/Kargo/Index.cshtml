@@ -1,0 +1,36 @@
+﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.KargoDetay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+<table class="table table-bordered" style="margin-top: 20px">
+    <tr>
+
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Personel</td>
+            <td>@item.Alici</td>
+            <td>@item.Tarih>
+
+            <td><a class="btn btn-info" href="/Kargo/DepartmanDetay/@item.KargoDetayId">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Departman/DepartmanEkle" class="btn btn-primary">Yeni Kargo Girişi</a>
+
+
+

@@ -11,6 +11,7 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
     {
         [Key]
         public int KargoTakipId { get; set; }
+
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string TakipKodu { get; set; }
