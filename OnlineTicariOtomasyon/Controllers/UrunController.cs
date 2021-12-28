@@ -147,7 +147,15 @@ namespace OnlineTicariOtomasyon.Controllers
                     Value = x.PersonelId.ToString()
                 }).ToList();
 
+            List<SelectListItem> deger2 = (from x in context.Carilers.ToList()
+                select new SelectListItem()
+                {
+                    Text = x.CariAd,
+                    Value = x.CariId.ToString()
+                }).ToList();
+
             ViewBag.dgr3 = deger3;
+            ViewBag.dgr4 = deger2;
             var deger1 = context.Uruns.Find(id);
        
             ViewBag.dgr1 = deger1.UrunId;
