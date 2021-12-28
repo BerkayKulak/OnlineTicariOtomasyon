@@ -19,7 +19,7 @@
         <tr>
             <td>@x.Urun.UrunAd</td>
             <td>@x.Fiyat</td>
-            <td>@x.Tarih</td>
+            <td>@Convert.ToDateTime(x.Tarih).ToString("MM/dd/yyyy")</td>
         </tr>
     }
    
