@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -49,6 +50,14 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel personel)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAd = Path.GetFileName(Request.Files[0].FileName);
+
+                string yol = "~/Image/" + dosyaAd;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                personel.PersonelGorsel = "/Image/" + dosyaAd;
+            }
             DataTable dtbDataTable = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(connection))
             {
@@ -91,6 +100,7 @@ namespace OnlineTicariOtomasyon.Controllers
                                        $"\r\nPersonelGorsel = '{personel.PersonelGorsel}'," +
                                        $"\r\nDepartmanId = {personel.DepartmanId}" +
                                        $"\r\nWHERE PersonelId = {personel.PersonelId};", sqlConnection);
+
                 sqlData.Fill(dtbDataTable);
             }
             //var prs = context.Personels.Find(personel.PersonelId);
