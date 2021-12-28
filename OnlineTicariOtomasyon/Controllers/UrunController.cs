@@ -140,6 +140,14 @@ namespace OnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult SatisYap()
         {
+            List<SelectListItem> deger3 = (from x in context.Personels.ToList()
+                select new SelectListItem()
+                {
+                    Text = x.PersonelAd,
+                    Value = x.PersonelId.ToString()
+                }).ToList();
+
+            ViewBag.dgr3 = deger3;
             return View();
         }
         [HttpPost]
