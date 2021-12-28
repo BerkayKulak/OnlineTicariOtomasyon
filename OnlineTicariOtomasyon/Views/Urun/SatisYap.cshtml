@@ -22,18 +22,16 @@
     @Html.DropDownListFor(x => x.CariId, (List<SelectListItem>)ViewBag.dgr4, new { @class = "form-control" } )
     <br />
     @Html.LabelFor(x => x.Adet)
-    <input type="number" class="form-control" max="10" min="0" placeholder="Adet Girin" id="txt1" onkeyup="sum();"/>
+    <input type="number" name="Adet" class="form-control" max="1000" min="0" placeholder="Adet Girin" id="txt1" onkeyup="sum();"/>
     <br />
     @Html.LabelFor(x => x.Fiyat)
-    <input type="number" class="form-control" max="10" min="0" placeholder="Fiyat Girin" id="txt2" onkeyup="sum();"/>
+    <input type="number" name="Fiyat" class="form-control"  placeholder="Fiyat Girin" id="txt2" onkeyup="sum();"/>
     <br />
     @Html.LabelFor(x => x.ToplamTutar)
-    <input type="number" class="form-control" max="10" min="0" placeholder="Fiyat Girin" id="txt3" onkeyup="sum();"/>
+    <input type="number" name="ToplamTutar" class="form-control" placeholder="Fiyat Girin" id="txt3" onkeyup="sum();"/>
 
     <br />
-    @Html.LabelFor(x => x.Tarih)
-    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
-    <br />
+  
     <button class="btn btn-primary">Satış Yap</button>
 </form>
 

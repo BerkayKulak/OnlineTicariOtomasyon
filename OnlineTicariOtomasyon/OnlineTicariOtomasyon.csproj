@@ -162,6 +162,7 @@
     <Compile Include="Models\Sınıflar\FaturaKalem.cs" />
     <Compile Include="Models\Sınıflar\Faturalar.cs" />
     <Compile Include="Models\Sınıflar\Giderler.cs" />
+    <Compile Include="Models\Sınıflar\KargoDetay.cs" />
     <Compile Include="Models\Sınıflar\Kategori.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Models\Sınıflar\Personel.cs" />
