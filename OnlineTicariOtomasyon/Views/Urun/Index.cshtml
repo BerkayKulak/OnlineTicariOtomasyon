@@ -20,6 +20,7 @@
 
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Satış Yap</th>
 
     </tr>
     @for(int i=0;i<Model.Rows.Count;i++)
@@ -35,6 +36,7 @@
        
             <td><a href="/Urun/UrunSil/@Model.Rows[i][0]" class="btn btn-danger">Sil</a></td>
             <td><a href="/Urun/UrunGetir/@Model.Rows[i][0]" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Urun/SatisYap/@Model.Rows[i][0]" class="btn btn-info">Satış Yap</a></td>
 
         </tr>
     }
