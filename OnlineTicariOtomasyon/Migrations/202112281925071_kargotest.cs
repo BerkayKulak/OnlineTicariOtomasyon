@@ -11,7 +11,7 @@
                 "dbo.KargoDetays",
                 c => new
                     {
-                        KargoDetayId = c.String(nullable: false, maxLength: 128),
+                        KargoDetayId = c.Int(nullable: false, identity: true),
                         Aciklama = c.String(maxLength: 250, unicode: false),
                         TakipKodu = c.String(maxLength: 30, unicode: false),
                         Personel = c.String(maxLength: 30, unicode: false),

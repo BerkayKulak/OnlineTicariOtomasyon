@@ -13,12 +13,12 @@ namespace OnlineTicariOtomasyon.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202112281845100_kargotest"; }
+            get { return "202112281925071_kargotest"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

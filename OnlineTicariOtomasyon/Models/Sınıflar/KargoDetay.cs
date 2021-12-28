@@ -10,7 +10,7 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
     public class KargoDetay
     {
         [Key]
-        public string KargoDetayId { get; set; }
+        public int KargoDetayId { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
