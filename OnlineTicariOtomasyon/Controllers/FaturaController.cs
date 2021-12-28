@@ -11,10 +11,15 @@ namespace OnlineTicariOtomasyon.Controllers
     {
         // GET: Fatura
         private Context context = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var liste = context.Faturalars.ToList();
-            return View(liste);
+            //var liste = context.Faturalars.ToList();
+            var liste = from x in context.Faturalars select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                liste = liste.Where(y => y.VergiDairesi.Contains(p));
+            }
+            return View(liste.ToList());
         }
         
         [HttpGet]
