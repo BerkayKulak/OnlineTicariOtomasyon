@@ -1,4 +1,6 @@
-﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.Departman>
+﻿@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<OnlineTicariOtomasyon.Models.Sınıflar.Departman>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -15,16 +17,17 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>@item.DepartmanId</td>
-    <td>@item.DepartmanAd</td>
-    <td><a class="btn btn-danger" href="/Departman/DepartmanSil/@item.DepartmanId">Sil</a></td>
-    <td><a class="btn btn-success" href="/Departman/DepartmanGetir/@item.DepartmanId">Güncelle</a></td>
-    <td><a class="btn btn-info" href="/Departman/DepartmanDetay/@item.DepartmanId">Detaylar</a></td>
-</tr>
+        <tr>
+            <td>@item.DepartmanId</td>
+            <td>@item.DepartmanAd</td>
+            <td><a class="btn btn-danger" href="/Departman/DepartmanSil/@item.DepartmanId">Sil</a></td>
+            <td><a class="btn btn-success" href="/Departman/DepartmanGetir/@item.DepartmanId">Güncelle</a></td>
+            <td><a class="btn btn-info" href="/Departman/DepartmanDetay/@item.DepartmanId">Detaylar</a></td>
+        </tr>
     }
 
 </table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new {sayfa}))
 <a href="/Departman/DepartmanEkle" class="btn btn-primary">Departman Ekle</a>
 
 

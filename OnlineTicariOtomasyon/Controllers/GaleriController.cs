@@ -12,9 +12,9 @@ namespace OnlineTicariOtomasyon.Controllers
     {
         // GET: Galeri
         private Context context = new Context();
-        public ActionResult Index(int sayfa = 1)
+        public ActionResult Index()
         {
-            var degerler = context.Uruns.ToList().ToPagedList(sayfa,4);
+            var degerler = context.Uruns.ToList();
             return View(degerler);
         }
     }
