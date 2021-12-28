@@ -137,6 +137,17 @@ namespace OnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
 
+        [HttpGet]
+        public ActionResult SatisYap()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SatisYap(SatisHareket satisHareket)
+        {
+
+            return View();
+        }
 
     }
 }
