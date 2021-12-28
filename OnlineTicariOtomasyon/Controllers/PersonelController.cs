@@ -89,6 +89,14 @@ namespace OnlineTicariOtomasyon.Controllers
 
         public ActionResult PersonelGuncelle(Personel personel)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAd = Path.GetFileName(Request.Files[0].FileName);
+
+                string yol = "~/Image/" + dosyaAd;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                personel.PersonelGorsel = "/Image/" + dosyaAd;
+            }
             DataTable dtbDataTable = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(connection))
             {
