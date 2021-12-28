@@ -36,3 +36,18 @@
     <br />
     <button class="btn btn-primary">Satış Yap</button>
 </form>
+
+<br/>
+<input type="text" id="txt1" onkeyup="sum();"/>
+<input type="text" id="txt2" onkeyup="sum();"/>
+<input type="text" id="txt3"/>
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('txt1').value;
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) + parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>
