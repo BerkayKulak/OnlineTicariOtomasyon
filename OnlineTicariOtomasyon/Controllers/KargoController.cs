@@ -43,5 +43,14 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult KargoTakip(string id)
+        {
+            var degerler = context.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            return View(degerler);
+        }
+
+
+
     }
 }
