@@ -7,27 +7,17 @@ using System.Web;
 
 namespace OnlineTicariOtomasyon.Models.Sınıflar
 {
-    public class KargoDetay
+    public class KargoTakip
     {
         [Key]
-        public string KargoDetayId { get; set; }
-
-        [Column(TypeName = "Varchar")]
-        [StringLength(250)]
-        public string Aciklama { get; set; }
-
+        public int KargoTakipId { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string TakipKodu { get; set; }
-
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
-        public string Personel{ get; set; }
-
-        [Column(TypeName = "Varchar")]
-        [StringLength(30)]
-        public string Alici{ get; set; }
-        public DateTime Tarih{ get; set; }
+        [StringLength(250)]
+        public string Aciklama { get; set; }
+        public string TarihZaman { get; set; }
 
     }
 }
