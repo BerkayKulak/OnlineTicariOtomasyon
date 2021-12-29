@@ -2934,6 +2934,7 @@
     <Content Include="Views\Grafik\Index.cshtml" />
     <Content Include="Views\Grafik\Index2.cshtml" />
     <Content Include="Views\Grafik\Index3.cshtml" />
+    <Content Include="Views\CariPanel\KargoTakip.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,43 @@
+﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.KargoDetay>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+@using (Html.BeginForm("KargoTakip", "CariPanel", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası: @Html.TextBox("p")
+        <input type="submit" value="Ara"/>
+    </p>
+}
+
+<table class="table table-bordered" style="margin-top: 20px">
+    <tr>
+
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Personel</td>
+            <td>@item.Alici</td>
+            <td>@item.Tarih>
+
+            <td><a class="btn btn-info" href="/Kargo/KargoTakip/@item.TakipKodu">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Kargo/YeniKargo" class="btn btn-primary">Yeni Kargo Girişi</a>
+
+
+
+
+
