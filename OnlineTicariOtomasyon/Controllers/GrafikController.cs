@@ -37,5 +37,7 @@ namespace OnlineTicariOtomasyon.Controllers
                 .AddSeries(chartType: "Column", name: "Stok", xValue: xvalue, yValues: yvalue);
             return File(grafik.ToWebImage().GetBytes(), "image/jpeg");
         }
+
+
     }
 }

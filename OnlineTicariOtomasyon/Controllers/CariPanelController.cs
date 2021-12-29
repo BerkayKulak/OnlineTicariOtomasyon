@@ -27,5 +27,15 @@ namespace OnlineTicariOtomasyon.Controllers
             var degerler = context.SatisHarekets.Where(x => x.CariId == id).ToList();
             return View(degerler);
         }
+
+        public ActionResult KargoTakip(string p)
+        {
+            var k = from x in context.KargoDetays select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                k = k.Where(y => y.TakipKodu.Contains(p));
+            }
+            return View(k.ToList());
+        }
     }
 }
