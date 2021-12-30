@@ -7,6 +7,7 @@ using System.Web.Security;
 
 namespace OnlineTicariOtomasyon.Models.Sınıflar
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
