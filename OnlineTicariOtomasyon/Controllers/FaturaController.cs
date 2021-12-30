@@ -75,5 +75,13 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Dinamik()
+        {
+            Class4 cs  = new Class4();
+            cs.deger1 = context.Faturalars.ToList();
+            cs.deger2 = context.FaturaKalems.ToList();
+            return View(cs);
+        }
     }
 }
