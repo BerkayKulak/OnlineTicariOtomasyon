@@ -1,4 +1,4 @@
-﻿@model List<OnlineTicariOtomasyon.Models.Sınıflar.Urun>
+﻿@model System.Data.DataTable
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -33,32 +33,32 @@
 </head>
 <body>
 
-    <br/>
+    <br />
     <div class="site-wrap">
 
         <main class="main-content">
-           
-                <div class="container-fluid photos">
-                    <div class="row align-items-stretch">
-                    @foreach (var item in Model)
+
+            <div class="container-fluid photos">
+                <div class="row align-items-stretch">
+                    @for (int i = 0; i < Model.Rows.Count; i++)
                     {
                         <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                            <a href="@item.UrunGorsel" class="d-block photo-item" data-fancybox="gallery">
+                            <a href="@Model.Rows[i][0]" class="d-block photo-item" data-fancybox="gallery">
 
-                                <img src="@item.UrunGorsel" />
+                                <img src="@Model.Rows[i][0]" />
                                 <div class="photo-text-more">
                                     <span class="icon icon-search"></span>
                                 </div>
-                    
+
                             </a>
                         </div>
                     }
-                    </div>
-
-
                 </div>
-           
-          
+
+
+            </div>
+
+
         </main>
 
     </div> <!-- .site-wrap -->
