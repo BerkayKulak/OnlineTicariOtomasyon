@@ -8,10 +8,12 @@ using PagedList;
 
 namespace OnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class DepartmanController : Controller
     {
         // GET: Departman
         private Context context = new Context();
+    
         public ActionResult Index(int sayfa = 1)
         {
             var degerler = context.Departmans.ToList().ToPagedList(sayfa, 4);
@@ -19,6 +21,7 @@ namespace OnlineTicariOtomasyon.Controllers
         }
 
         [HttpGet]
+    
         public ActionResult DepartmanEkle()
         {
 
@@ -26,6 +29,7 @@ namespace OnlineTicariOtomasyon.Controllers
         }
 
         [HttpPost]
+     
         public ActionResult DepartmanEkle(Departman departman)
         {
             context.Departmans.Add(departman);
