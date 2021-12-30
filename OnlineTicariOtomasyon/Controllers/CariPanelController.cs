@@ -19,6 +19,10 @@ namespace OnlineTicariOtomasyon.Controllers
             //var degerler = context.Carilers.FirstOrDefault(x => x.CariMail == carimail);
             var degerler = context.Carilers.Where(x => x.CariMail == carimail).ToList();
             ViewBag.m = carimail;
+            var mailid = context.Carilers.Where(x => x.CariMail == carimail).Select(y => y.CariId).FirstOrDefault();
+            ViewBag.mid = mailid;
+            var toplamSatis = context.SatisHarekets.Where(x => x.CariId == mailid).Count();
+            ViewBag.toplamSatis = toplamSatis;
             return View(degerler);
         }
 
