@@ -29,5 +29,8 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         public string Alici{ get; set; }
         public DateTime Tarih{ get; set; }
 
+        public int UrunId { get; set; }
+        public virtual Urun Urun { get; set; }
+
     }
 }

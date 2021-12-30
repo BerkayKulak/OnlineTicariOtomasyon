@@ -9,7 +9,7 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
 {
     public class KargoTakip
     {
-        [Key]
+        [ForeignKey("Urun")]
         public int KargoTakipId { get; set; }
 
         [Column(TypeName = "Varchar")]
@@ -19,6 +19,9 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(250)]
         public string Aciklama { get; set; }
         public string TarihZaman { get; set; }
+
+        public int UrunId { get; set; }
+        public virtual Urun Urun { get; set; }
 
     }
 }

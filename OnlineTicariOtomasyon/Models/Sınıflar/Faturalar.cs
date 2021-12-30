@@ -37,5 +37,8 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
 
         public decimal Toplam { get; set; }
         public ICollection<FaturaKalem> FaturaKalems { get; set; }
+
+        public int UrunId { get; set; }
+        public virtual Urun Urun { get; set; }
     }
 }
