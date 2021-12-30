@@ -18,6 +18,7 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
 
         [Column(TypeName = "bit")]
         public bool Durum { get; set; }
-
+        public int UrunId { get; set; }
+        public virtual Urun Urun { get; set; }
     }
 }

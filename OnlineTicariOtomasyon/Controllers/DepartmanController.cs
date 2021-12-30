@@ -14,7 +14,7 @@ namespace OnlineTicariOtomasyon.Controllers
         private Context context = new Context();
         public ActionResult Index(int sayfa = 1)
         {
-            var degerler = context.Departmans.Where(x => x.Durum == true).ToList().ToPagedList(sayfa, 4);
+            var degerler = context.Departmans.ToList().ToPagedList(sayfa, 4);
             return View(degerler);
         }
 

@@ -162,6 +162,30 @@
     <Compile Include="Migrations\202112281925071_kargotest.designer.cs">
       <DependentUpon>202112281925071_kargotest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112301514222_DetayAndUrun.cs" />
+    <Compile Include="Migrations\202112301514222_DetayAndUrun.designer.cs">
+      <DependentUpon>202112301514222_DetayAndUrun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112301531503_KargoTakip.cs" />
+    <Compile Include="Migrations\202112301531503_KargoTakip.designer.cs">
+      <DependentUpon>202112301531503_KargoTakip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112301534227_KargoDetays.cs" />
+    <Compile Include="Migrations\202112301534227_KargoDetays.designer.cs">
+      <DependentUpon>202112301534227_KargoDetays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112301536416_Faturalar.cs" />
+    <Compile Include="Migrations\202112301536416_Faturalar.designer.cs">
+      <DependentUpon>202112301536416_Faturalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112301538455_Yapilacak.cs" />
+    <Compile Include="Migrations\202112301538455_Yapilacak.designer.cs">
+      <DependentUpon>202112301538455_Yapilacak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112301546003_UrunId.cs" />
+    <Compile Include="Migrations\202112301546003_UrunId.designer.cs">
+      <DependentUpon>202112301546003_UrunId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Cariler.cs" />
@@ -2970,6 +2994,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112281925071_kargotest.resx">
       <DependentUpon>202112281925071_kargotest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112301514222_DetayAndUrun.resx">
+      <DependentUpon>202112301514222_DetayAndUrun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112301531503_KargoTakip.resx">
+      <DependentUpon>202112301531503_KargoTakip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112301534227_KargoDetays.resx">
+      <DependentUpon>202112301534227_KargoDetays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112301536416_Faturalar.resx">
+      <DependentUpon>202112301536416_Faturalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112301538455_Yapilacak.resx">
+      <DependentUpon>202112301538455_Yapilacak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112301546003_UrunId.resx">
+      <DependentUpon>202112301546003_UrunId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

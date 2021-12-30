@@ -18,5 +18,8 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(2000)]
         public string UrunBilgi { get; set; }
 
+        public int UrunId { get; set; }
+        public virtual Urun Urun { get; set; }
+
     }
 }

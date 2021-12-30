@@ -30,5 +30,7 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
 
         public int DepartmanId { get; set; }
         public virtual Departman Departman { get; set; }
+
+        public ICollection<Yapilacak> Yapilacaks { get; set; }
     }
 }

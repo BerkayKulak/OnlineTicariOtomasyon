@@ -27,6 +27,11 @@ namespace OnlineTicariOtomasyon.Models.Sınıflar
         public string UrunGorsel { get; set; }
         public int KategoriID { get; set; }
         public virtual Kategori Kategori { get; set; }
+
+        public virtual KargoTakip KargoTakip { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
+        public ICollection<Detay> Detays { get; set; }
+        public ICollection<KargoDetay> KargoDetays { get; set; }
+        public ICollection<Faturalar> Faturalars { get; set; }
     }
 }
