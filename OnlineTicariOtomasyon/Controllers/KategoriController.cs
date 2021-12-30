@@ -99,5 +99,17 @@ namespace OnlineTicariOtomasyon.Controllers
             cs.Urunler = new SelectList(context.Uruns, "UrunId", "UrunAd");
             return View(cs);
         }
+
+        public JsonResult UrunGetir(int p)
+        {
+            var urunlerlistesi = (from x in context.Uruns
+                join y in context.Kategoris on x.Kategori.KategoriID equals y.KategoriID
+                where x.Kategori.KategoriID == p select new
+                {
+                    Text=x.UrunAd,
+                    Value=x.UrunId.ToString()
+                }).ToList();
+            return Json(urunlerlistesi, JsonRequestBehavior.AllowGet);
+        }
     }
 }
