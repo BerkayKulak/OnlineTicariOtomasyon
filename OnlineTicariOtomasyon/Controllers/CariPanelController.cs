@@ -16,7 +16,8 @@ namespace OnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var carimail = (string) Session["CariMail"];
-            var degerler = context.Carilers.FirstOrDefault(x => x.CariMail == carimail);
+            //var degerler = context.Carilers.FirstOrDefault(x => x.CariMail == carimail);
+            var degerler = context.Carilers.Where(x => x.CariMail == carimail).ToList();
             ViewBag.m = carimail;
             return View(degerler);
         }
