@@ -91,5 +91,13 @@ namespace OnlineTicariOtomasyon.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Deneme()
+        {
+            Class3 cs = new Class3();
+            cs.Kategoriler = new SelectList(context.Kategoris, "KategoriId", "KategoriAd");
+            cs.Urunler = new SelectList(context.Uruns, "UrunId", "UrunAd");
+            return View(cs);
+        }
     }
 }

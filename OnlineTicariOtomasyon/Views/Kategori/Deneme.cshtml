@@ -1,0 +1,20 @@
+﻿@model OnlineTicariOtomasyon.Models.Sınıflar.Class3
+@{
+    ViewBag.Title = "Deneme";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div>
+    <h2>
+        Kategoriler - Ürünler
+    </h2>
+</div>
+<br/>
+<div>
+    @Html.Label("Kategoriler")
+    @Html.DropDownList("DrpKategori",Model.Kategoriler,"---Kategori Seçiniz",new {@class = "form-control"})
+    <br/>
+    @Html.Label("Urunler")
+    @Html.DropDownList("DrpKategori",Model.Urunler,"---Kategori Seçiniz",new {@class = "form-control"})
+</div>
