@@ -27,6 +27,8 @@ namespace OnlineTicariOtomasyon.Controllers
             ViewBag.toplamTutar = toplamTutar;
             var toplamUrunSayisi = context.SatisHarekets.Where(x => x.CariId == mailid).Sum(y => y.Adet);
             ViewBag.toplamUrunSayisi = toplamUrunSayisi;
+            var adsoyad = context.Carilers.Where(x => x.CariMail == carimail).Select(y => y.CariAd + " "+y.CariSoyad).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
             return View(degerler);
         }
 
