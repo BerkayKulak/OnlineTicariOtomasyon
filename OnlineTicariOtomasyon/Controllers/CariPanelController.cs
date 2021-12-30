@@ -23,6 +23,10 @@ namespace OnlineTicariOtomasyon.Controllers
             ViewBag.mid = mailid;
             var toplamSatis = context.SatisHarekets.Where(x => x.CariId == mailid).Count();
             ViewBag.toplamSatis = toplamSatis;
+            var toplamTutar = context.SatisHarekets.Where(x => x.CariId == mailid).Sum(y => y.ToplamTutar);
+            ViewBag.toplamTutar = toplamTutar;
+            var toplamUrunSayisi = context.SatisHarekets.Where(x => x.CariId == mailid).Sum(y => y.Adet);
+            ViewBag.toplamUrunSayisi = toplamUrunSayisi;
             return View(degerler);
         }
 
