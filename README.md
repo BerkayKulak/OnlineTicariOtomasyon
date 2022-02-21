@@ -96,8 +96,9 @@ This is an example of how to list things you need to use the software and how to
 
 * dotnet ECommerce.NET-Angular.Infrastructure.csproj
   ```sh
- https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472
+  https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472
   ```
+  
   
 ## Database Configuration (Web.config)
 
