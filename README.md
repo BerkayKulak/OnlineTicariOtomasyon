@@ -83,6 +83,10 @@ This project consists of 3 basic panels of a store, namely a storefront, admin a
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+### Database Schema
+
+<img width="100%" src="https://user-images.githubusercontent.com/61355143/154915642-0bb73fa0-ee49-40b4-bef0-60c18537a7fc.png">
+<img width="100%" src="https://user-images.githubusercontent.com/61355143/154915855-b5744c40-3b49-4f47-9b1e-1ef1a1bc8df7.png">
 
 <!-- GETTING STARTED -->
 ## Getting Started
