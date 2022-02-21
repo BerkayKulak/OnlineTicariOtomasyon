@@ -32,8 +32,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img width="100%" src="https://user-images.githubusercontent.com/61355143/154852071-e2d8ce7c-b318-41a1-b832-1d118e27d846.gif">
-<img width="100%" src="https://user-images.githubusercontent.com/61355143/154852634-1025e6a2-bd65-4d1a-8d99-d3f6aab31e5c.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/61355143/154913272-62d4a6ed-36eb-4f9d-b798-8663c6878c4f.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/61355143/154913400-87a33902-5f6e-40d8-8e9e-080f096918fa.gif">
 
 
 
