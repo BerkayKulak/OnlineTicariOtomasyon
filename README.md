@@ -103,9 +103,9 @@ This is an example of how to list things you need to use the software and how to
 ## Database Configuration (Web.config)
 
 ```bash
-	<connectionStrings>
-		<add name="Context" connectionString="data source=(localdb)\MSSQLLocalDB;initial catalog=KfauAutomationProject;integrated security=True" providerName="System.Data.SqlClient" />
-	</connectionStrings>
+  <connectionStrings>
+	<add name="Context" connectionString="data source=[YOUR LOCAL DB];initial catalog=[YOUR DATABASE NAME];integrated security=True" providerName="System.Data.SqlClient" />
+  </connectionStrings>
 ```
 
 
