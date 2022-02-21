@@ -39,50 +39,44 @@
 
 Here's why:
 
-Learn one way to build applications with Angular and reuse your code and abilities to build apps for any deployment target. For web, mobile web, native mobile and native desktop. Achieve the maximum speed possible on the Web Platform today, and take it further, via Web Workers and server-side rendering. Build features quickly with simple, declarative templates. Extend the template language with your own components and use a wide array of existing components. Get immediate Angular-specific help and feedback with nearly every IDE and editor. All this comes together so you can focus on building amazing apps rather than trying to make the code work. Angular puts you in control over scalability. Meet huge data requirements by building data models on RxJS, Immutable.js or another push-model.
+This project consists of 3 basic panels of a store, namely a storefront, admin and user. In particular, I have developed a concrete project with both a powerful interface to design and SQL structures such as Entity Framework, Trigger, Procedure via Linq queries beyond crud operations, especially with the dashboard part of the admin panel.
 
 ## You will find answers to the following questions
 
-- How to set up a developer environment
-- How to create a multi-project .net core application using Dotnet CLI
-- How to create client-side front-end Angular UI using Angular CLI for store
-- How to use the .NET Core (Backend) Repository Pattern,Unit of Work
-- How to use multiple DbContext
-- How to implement authorization
-- How to Use Lazy Loading
-- Automapper ASP.NET How do we use it in Core
-- How to create a great looking user interface using Bootstrap
-- How to Use an Angular Reactive Form.
-- How to adapt Paging, Sorting, Search and Filtering to the project.
-- How do we use Redis to store a shopping cart
-- How to create an order from the shopping cart
-- How do we accept payment via Stripe using the new EU standards for 3D security.
-
-
+- How to check layout
+- How should the Controller Structure be provided
+- How to write Complex SQL queries
+- What is the Entity Framework approach
+- What is the Model Structure
+- How to write Linq Queries.
+- What are the criteria to be considered in the Related Tables.
+- How to Use Trigger
+- How Do We Create a Procedure
+- How to provide a view structure.
 
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [Angular](https://angular.io/)
-* [Asp.Net Core API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)
-* [MSSql](https://www.microsoft.com/en-us/sql-server/sql-server-2019)
+
+* [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+* [Bootstrap](https://getbootstrap.com/)
+* [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2019)
 
 ### Technologies and Methods
 
-- Dotnet CLI
-- Client-side front-end using Angular CLI Angular UI
-- epository Pattern,Unit of Work pattern
-- Using multiple DbContext
-- For login and registration ASP.NET Using identity
-- Use of Lazy Loading
-- Using Automapper
+- Layout Control
+- Controller Structure
+- Partial View
+- Code First
+- Entity Framework
+- Model Structure
+- Linq Queries
+- Related Tables
+- Usage of Trigger
+- Installation and Editing of a Ready-made Template
 - Bootstrap
-- Angular Reactive Form 
-- Pagination, Sorting, Search dec Filtering
-- Redis
-- Stripe
+- Dashboard yapısı
 
 
 
@@ -99,62 +93,20 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* dotnet ECommerce.NET-Angular.API.csproj
-  ```sh
-  <PackageReference Include="AutoMapper" Version="11.0.1" />
-  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
-  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
-  <PrivateAssets>all</PrivateAssets>
-  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-  </PackageReference>
-  <PackageReference Include="Stripe.net" Version="39.90.0" />
-  <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-  ```
-  
-* dotnet ECommerce.NET-Angular.Core.csproj
-  ```sh
-  <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="5.0.13" />
-  ```
-  
+
 * dotnet ECommerce.NET-Angular.Infrastructure.csproj
   ```sh
-  <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
-  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.13" />
-  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
-  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
-  <PrivateAssets>all</PrivateAssets>
-  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-  </PackageReference>
-  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
-  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
-  <PrivateAssets>all</PrivateAssets>
-  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-  </PackageReference>
-  <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.15.1" />
-  <PackageReference Include="StackExchange.Redis" Version="2.2.4" />
-  <PackageReference Include="Stripe.net" Version="39.90.0" />
-  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.1" />
+ https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472
   ```
-## Database Configuration (appsettings.json)
-
-
-```bash
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=[YOUR_LOCAL_DB];Initial Catalog=[YOUR_DB_NAME];Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",
-    "Redis": "localhost"
-  },
-```
-
-## Stripe Integration
-
+  
+## Database Configuration (Web.config)
 
 ```bash
- "StripeSettings": {
-    "PublishableKey": "[PUBLISH_KEY]",
-    "SecretKey": "[SECRET_KEY]"
-  },
+	<connectionStrings>
+		<add name="Context" connectionString="data source=(localdb)\MSSQLLocalDB;initial catalog=KfauAutomationProject;integrated security=True" providerName="System.Data.SqlClient" />
+	</connectionStrings>
 ```
+
 
 ### Installation
 
@@ -164,7 +116,7 @@ To clone and run this application, The .NET command-line interface (CLI) is a cr
 
 1. Clone the repo
    ```sh
-   https://github.com/BerkayKulak/Commerce-Coop.git
+   https://github.com/BerkayKulak/OnlineTicariOtomasyon.git
    ```
 2. Update Nuget packages
    ```sh
@@ -188,7 +140,7 @@ To clone and run this application, The .NET command-line interface (CLI) is a cr
 
 ```bash
 # Go into the repository API
-$ cd \ECommerce.NET-Angular\ECommerce.NET-Angular.API
+$ cd \OnlineTicariOtomasyon\OnlineTicariOtomasyon
 
 # Run the app
 $ dotnet run
@@ -203,9 +155,9 @@ $ dotnet run --project ./projects/proj1/proj1.csproj
 <!-- ROADMAP -->
 ## Bug / Feature Request
 
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/BerkayKulak/Commerce-Coop/issues/new) by including your search query and the expected result.
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/BerkayKulak/OnlineTicariOtomasyon/issues/new) by including your search query and the expected result.
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/BerkayKulak/Commerce-Coop/issues/new). Please include sample queries and their corresponding results.
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/BerkayKulak/OnlineTicariOtomasyon/issues/new). Please include sample queries and their corresponding results.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -243,7 +195,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Berkay Kulak - (https://www.linkedin.com/in/berkay-kulak-3442311b1/) - kulakberkay15@gmail.com
 
-Project Link:   (https://github.com/BerkayKulak/Commerce-Coop)
+Project Link:   (https://github.com/BerkayKulak/OnlineTicariOtomasyon)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
